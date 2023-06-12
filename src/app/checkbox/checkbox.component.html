@@ -1,0 +1,10 @@
+<div class="multiselect-container">
+    <div class="selected-values" *ngIf="selectedValues.length > 0">
+      Selected values: {{ selectedValues.join(', ') }}
+    </div>
+    <div class="checkbox-container" *ngFor="let option of options">
+
+      <input type="checkbox" [value]="option.value" [checked]="isSelected(option.value)" (change)="toggleSelection($event)" [disabled]="readonly" />
+      <label>{{ option.label }}</label>
+    </div>
+  </div>
